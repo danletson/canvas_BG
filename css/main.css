@@ -1,0 +1,137 @@
+body {
+  background-color: black;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: "museo-slab", serif;
+  color: #f8f8f8; }
+
+a {
+  font-size: 3em;
+  font-style: italic;
+  text-decoration: none;
+  color: #60bb46; }
+
+h1, h2, h3 {
+  font-weight: normal;
+  margin: 0.5em 0; }
+
+h2 {
+  font-size: 3em;
+  margin: 0.5em 0; }
+
+h3 {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #222222; }
+
+.main {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px; }
+  .main hgroup {
+    margin: 5em auto; }
+    .main hgroup .warning {
+      color: red; }
+  .main .banner {
+    font-size: 5em;
+    color: #f8f8f8;
+    font-family: "museo-slab", serif;
+    font-weight: normal;
+    margin: 0 auto; }
+
+section {
+  width: 100%;
+  margin-bottom: 100px; }
+
+.properties {
+  position: absolute;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px; }
+  .properties input {
+    display: inline-block; }
+
+h4 {
+  display: inline-block; }
+
+/* container for slides */
+.images {
+  position: relative;
+  height: 400px;
+  border: 1px solid #f8f8f8;
+  width: 100%;
+  margin: 0 auto;
+  margin: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; }
+  .images img {
+    max-width: 100%; }
+
+/* single slide */
+.images div {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 12px; }
+
+/* header */
+.images h3 {
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+  color: #456; }
+
+/* tabs (those little circles below slides) */
+.slidetabs {
+  clear: both;
+  margin-left: 310px; }
+
+/* single tab */
+.slidetabs a {
+  width: 8px;
+  height: 8px;
+  float: left;
+  margin: 3px;
+  background: url(/media/img/scrollable/arrow/navigator.png) 0 0 no-repeat;
+  display: none;
+  font-size: 1px; }
+
+/* mouseover state */
+.slidetabs a:hover {
+  background-position: 0 -8px; }
+
+/* active state (current page state) */
+.slidetabs a.current {
+  background-position: 0 -16px; }
+
+/* next */
+.forward {
+  background-position: 0 -30px;
+  clear: right; }
+
+.forward:hover {
+  background-position: -30px -30px; }
+
+.forward:active {
+  background-position: -60px -30px; }
+
+/* prev */
+.backward:hover {
+  background-position: -30px 0; }
+
+.backward:active {
+  background-position: -60px 0; }
+
+/* disabled navigational button. is not needed when tabs are
+   configured with rotate: true */
+.disabled {
+  visibility: hidden !important; }

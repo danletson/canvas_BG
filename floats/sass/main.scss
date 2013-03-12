@@ -1,0 +1,58 @@
+$white: #f8f8f8;
+$blue: #008BBF;
+$black: #101010;
+$purple: #5D2C8F;
+$grey: #222;
+$light_grey: #aaa;
+$teal: #03B3E2;
+$orange: #F37021;
+$green: #60BB46;
+$serif: "museo-slab", serif;
+$sans_serif: "soliel", sans-serif;
+
+@mixin ir {
+  display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0;
+  br { display: none; }
+}
+
+@mixin hidden {
+  display: none !important; visibility: hidden;
+}
+
+@mixin clearfix { 
+    *zoom: 1;
+    &:before { content: ""; display: table; }
+    &:after { content: ""; display: table; clear: both; }
+}
+@mixin prefix($property, $value){
+    -webkit-#{$property}: #{$value};
+    -moz-#{$property}:  #{$value};
+    -ms-#{$property}:  #{$value};
+    -o-#{$property}:  #{$value};
+    #{$property}: #{$value};
+}
+
+@mixin animate_slow { 
+    @include prefix(transition, all 600ms cubic-bezier(0, 0.82, 1, 0.77))
+}
+
+@mixin animate_fast { 
+    @include prefix(transition, all 200ms cubic-bezier(.14,.82,.17,.99))
+}
+
+body{
+background-color: rgb(34,34,34);
+position: relative;
+margin: 0;
+padding: 0;
+}
+
+canvas {
+}
+
+.properties{
+    position: absolute;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+}

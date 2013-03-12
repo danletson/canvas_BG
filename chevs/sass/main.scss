@@ -1,0 +1,158 @@
+$white: #f8f8f8;
+$blue: #008BBF;
+$black: #101010;
+$purple: #5D2C8F;
+$grey: #222;
+$light_grey: #aaa;
+$teal: #03B3E2;
+$orange: #F37021;
+$green: #60BB46;
+$serif: "museo-slab", serif;
+$sans_serif: "soliel", sans-serif;
+
+@mixin ir {
+  display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0;
+  br { display: none; }
+}
+
+@mixin hidden {
+  display: none !important; visibility: hidden;
+}
+
+@mixin clearfix { 
+    *zoom: 1;
+    &:before { content: ""; display: table; }
+    &:after { content: ""; display: table; clear: both; }
+}
+@mixin prefix($property, $value){
+    -webkit-#{$property}: #{$value};
+    -moz-#{$property}:  #{$value};
+    -ms-#{$property}:  #{$value};
+    -o-#{$property}:  #{$value};
+    #{$property}: #{$value};
+}
+
+@mixin animate_slow { 
+    @include prefix(transition, all 600ms cubic-bezier(0, 0.82, 1, 0.77))
+}
+
+@mixin animate_fast { 
+    @include prefix(transition, all 200ms cubic-bezier(.14,.82,.17,.99))
+}
+
+body{
+background-color: white;
+position: relative;
+color: $grey;
+font-family: $sans_serif;
+margin: 0;
+padding: 0;
+}
+
+canvas {
+    position: absolute;
+    z-index:-1;
+    top: 0;
+    left: 0;
+}
+
+a h3{
+    text-decoration: none;
+    color: $orange;
+    @include animate_fast;
+    &:hover{
+        color: $green;
+    }
+}
+
+.properties, .code{
+    width: 100%;
+    text-align: center;
+    top: 0;
+    padding: .5em 0;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+ul{
+    margin: 0 auto;
+    width: 96%;
+    padding: 0 0 .5em 0;
+}
+
+li{
+    display: inline-block;
+    margin: 0 .5em;
+    h4, h3{
+        margin: .25em 0;
+        
+    }
+    h4{
+        font-weight: normal;
+    }
+    input{
+        width: 72px;
+        border: 0;
+        margin: 0;
+        height: 20px;
+        padding: 0 5px;
+    }
+}
+
+.header{
+    li{
+        width: 100%;
+        max-width: 400px;
+        h1{
+            color: $light_grey;
+            font-size: 4.5em;
+            font-style: italic;
+            margin: 0;
+
+        }
+        h2{
+            font-weight: normal;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.hider{
+    text-decoration: none;
+    font-style: italic;
+    color: red;
+    font-size: .8em;
+}
+
+.settings, .code{
+    li{
+        margin: .25em .5em;
+    }
+}
+
+.settings_output{
+    margin: 0;
+    background-color: $white;
+    font-size: .9em;
+    padding: 8px;
+
+}
+
+.tips{
+    font-size: .8em;
+    line-height: 1.8em;
+}
+
+button{
+    background-color: $orange;
+    border: none;
+    font-size: 1em;
+    color: $white;
+    padding: 5px;
+    @include prefix(border-radius, 5px);
+    cursor: pointer;
+    @include animate_fast;
+    &:hover{
+        background-color: $green;
+    }
+}
+

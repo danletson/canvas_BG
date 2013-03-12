@@ -1,0 +1,14 @@
+/* line 43, ../sass/main.scss */
+.mover, .mover2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: #60bb46;
+}
+
+/* line 52, ../sass/main.scss */
+.mover2 {
+  background-color: #03b3e2;
+}
